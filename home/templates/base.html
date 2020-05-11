@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>new navbar</title>
+	<meta charset="utf-8">
+	<meta name="viewport"  content="width-device-width , initial-scale-1"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- styles -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+<style>
+   @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+	 html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+}
+
+body {
+      font-family: "Helvetica Neue",sans-serif;
+      font-weight: lighter;}
+img{
+  width:100%;
+  max-width:100%;
+}
+
+
+.navbar{
+  position:fixed;
+  width:100%;
+  background-color:transparent;
+  z-index: 69;
+  border-radius:0;
+  border-color:transparent;
+
+}
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
+
+
+.jumbotron h1 {
+  color: #353535;
+}
+footer {
+  margin-bottom: 0 !important;
+  margin-top: 80px;
+  background-color: black #important;
+}
+footer p {
+  margin: 0;
+  padding: 0;
+}
+span.icon {
+  margin: 0 5px;
+  color: #D64541;
+}
+h2 {
+  color: #BDC3C7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.mrng-60-top {
+  margin-top: 60px;
+}
+/* Global Button Styles */
+a.animated-button:link, a.animated-button:visited {
+  position: relative;
+  display: block;
+  margin: 30px auto 0;
+  padding: 14px 15px;
+  color: #fff;
+  font-size:14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: .08em;
+  border-radius: 0;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+a.animated-button:link:after, a.animated-button:visited:after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  width: 150%;
+  z-index: -1;
+  -webkit-transition: all 0.75s ease 0s;
+  -moz-transition: all 0.75s ease 0s;
+  -o-transition: all 0.75s ease 0s;
+  transition: all 0.75s ease 0s;
+}
+a.animated-button:link:hover, a.animated-button:visited:hover {
+  color: #FFF;
+  text-shadow: none;
+}
+a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
+  height: 450%;
+}
+a.animated-button:link, a.animated-button:visited {
+  position: relative;
+  display: block;
+  margin: 30px auto 0;
+  padding: 14px 15px;
+  color: #fff;
+  font-size:14px;
+  border-radius: 0;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: .08em;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+/* Victoria Buttons */
+
+a.animated-button.victoria-one {
+  border: 2px solid #D24D57;
+}
+a.animated-button.victoria-one:after {
+  background: #D24D57;
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+  transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+}
+a.animated-button.victoria-two {
+  border: 2px solid #D24D57;
+}
+a.animated-button.victoria-two:after {
+  background: #D24D57;
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+  transform: translateX(-50%) translateY(-50%) rotate(25deg);
+}
+a.animated-button.victoria-three {
+  border: 2px solid #D24D57;
+}
+a.animated-button.victoria-three:after {
+  background: #D24D57;
+  opacity: .5;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+a.animated-button.victoria-three:hover:after {
+  height: 140%;
+  opacity: 1;
+}
+a.animated-button.victoria-four {
+  border: 2px solid #D24D57;
+}
+a.animated-button.victoria-four:after {
+  background: #D24D57;
+  opacity: .5;
+  -moz-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  -ms-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  -webkit-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  transform: translateY(-50%) translateX(-50%) rotate(90deg);
+}
+a.animated-button.victoria-four:hover:after {
+  opacity: 1;
+  height: 600% !important;
+}
+
+/* Thar Buttons */
+
+a.animated-button.thar-one {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: 2px solid #F7CA18;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+a.animated-button.thar-one:hover {
+  color: #000 !important;
+  background-color: transparent;
+  text-shadow: none;
+}
+a.animated-button.thar-one:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+a.animated-button.thar-one:before {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 0px;
+  width: 100%;
+  z-index: -1;
+  content: '';
+  color: #000 !important;
+  background: #F7CA18;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+a.animated-button.thar-two {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: 2px solid #F7CA18;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+a.animated-button.thar-two:hover {
+  color: #000 !important;
+  background-color: transparent;
+  text-shadow: ntwo;
+}
+a.animated-button.thar-two:hover:before {
+  top: 0%;
+  bottom: auto;
+  height: 100%;
+}
+a.animated-button.thar-two:before {
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  height: 0px;
+  width: 100%;
+  z-index: -1;
+  content: '';
+  color: #000 !important;
+  background: #F7CA18;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+a.animated-button.thar-three {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: 2px solid #F7CA18;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+
+}
+a.animated-button.thar-three:hover {
+  color: #000 !important;
+  background-color: transparent;
+  text-shadow: nthree;
+}
+a.animated-button.thar-three:hover:before {
+  left: 0%;
+  right: auto;
+  width: 100%;
+}
+a.animated-button.thar-three:before {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 0px;
+  z-index: -1;
+  content: '';
+  color: #000 !important;
+  background: #F7CA18;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+
+}
+a.animated-button.thar-four {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: 2px solid #F7CA18;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+
+}
+a.animated-button.thar-four:hover {
+  color: #000 !important;
+  background-color: transparent;
+  text-shadow: nfour;
+}
+a.animated-button.thar-four:hover:before {
+  right: 0%;
+  left: auto;
+  width: 100%;
+}
+a.animated-button.thar-four:before {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 0px;
+  z-index: -1;
+  content: '';
+  color: #000 !important;
+  background: #F7CA18;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+
+}
+
+.third {
+  border-color: #3498db;
+  color: #fff;
+  margin-top: -265px;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.third:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+.navbar-nav a:hover{
+  border-bottom: 2px solid #ed3b0e ;
+
+}
+li{
+
+}
+.nav-item{
+  margin-right: 40px;
+}
+.navbar-nav a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.bg-dark-light {
+    background: #323232 !important;
+}
+.bg-theme, .bg-dark, .bg-dark-light, .bg-secondary {
+    color: #ffffff;
+}
+.widgets.footer-widgets .widget-title {
+    color: #ffffff;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.widgets.footer-widgets .widget-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100px;
+    background: #13bfb1;
+}
+.widgets.footer-widgets .widget-quick-links ul {
+    margin-top: -4px;
+}
+.widgets.footer-widgets .single-widget ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.widgets.footer-widgets .widget-quick-links ul li {
+    display: block;
+}
+.widgets.footer-widgets .widget-quick-links ul li a {
+    display: block;
+    font-size: 13px;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 9px 0;
+}
+
+.widgets.footer-widgets .single-widget ul li {
+    list-style: none;
+    font-family: "Raleway", sans-serif;
+}
+.widgets.footer-widgets .widget-contact ul li {
+    color: #000;
+    font-size: 13px;
+    color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.widgets.footer-widgets .widget-contact ul li span {
+    font-size: 14px;
+    color: #ffffff;
+    border: 2px solid #cccccc;
+    border-radius: 3px;
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    line-height: 28px;
+    text-align: center;
+    margin-right: 20px;
+}
+.widgets.footer-widgets .widget-contact ul li.phone, .widgets.footer-widgets .widget-contact ul li.fax {
+    font-size: 15px;
+}
+
+.widgets.footer-widgets .widget-contact ul li + li {
+    margin-top: 20px;
+}
+
+.how-it-work {/*(how to)*/
+  margin-bottom: 60px;
+  position: relative;
+}
+.main-how-it {
+  position: absolute;
+  top: 217px;
+  left: -355px;
+  background: #f6f6f6;
+  width: 544px;
+  height: 110px;
+  transform: rotate(-90deg);
+  border-radius: 50px;
+  box-shadow: 0px 2px 11px -2px rgba(0,0,0,0.4);
+}
+.main-how-it h4 {
+  font-size: 54px;
+  padding-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color:#859678;
+  font-weight: 800;
+}
+.bg-theme {
+  color: #ab9760;
+}
+.how-it-work .panel {
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  color:#fff;
+  font-size: 16px;
+  background: #ab9760;
+  box-shadow: 0px 1px 7px 1px rgba(0,0,0,0.4);
+  margin-bottom:15px;
+}
+.how-it-work .panel span,
+.how-it-work .panel:hover span  {
+  -webkit-transition: all ease-out 0.3s;
+  -moz-transition: all ease-out 0.3s;
+  -o-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+.how-it-work .panel:hover span {
+  background: rgba(0,0,0,0.4);
+}
+.how-it-work .panel:nth-child(even) {
+  background:  #859678;
+}
+.how-it-work .panel-body {
+  overflow-y: auto;
+  overflow: visible;
+  height: 120px;
+  padding-left: 120px;
+  position: relative;
+}
+.how-it-work .panel-body span {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  color: #008931;
+  background: #f6f6f6;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 800;
+  border-radius: 50%;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.4);
+}
+.how-it-work .panel-body span:before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: -49px;
+  width: 50px;
+  height: 20px;
+  background: #f6f6f6;
+  box-shadow: 0px 8px 3px -5px rgba(0,0,0,0.2);
+}
+.how-it-work .panel:nth-child(even) span {
+  color: #78c043;
+}
+.how-it-work .step-heading {
+  font-size: 28px;
+  margin-top: 0px;
+  color: rgba(0,0,0,0.3);
+  padding-top:15px;
+}
+
+#footer ul.social li{
+  padding: 3px 0;
+  width: 80px;
+}
+#footer ul.social li a i {
+    margin-right: 15px;
+  font-size: 2em;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+  font-size:30px;
+  margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+  color:#ffffff;
+}
+#footer ul.social li a:hover{
+  color:#eeeeee;
+}
+</style>
+
+{% load static %}
+
+
+</head>
+<body>
+{#start navbar#}
+    {% block 'navbar' %}
+	<nav class="navbar navbar-expand-lg navbar-default">
+  <a class="navbar-brand" href="#"><img src = "{% static 'images/pogo.jpg' %}" class="img-fluid w-25" style="border-radius: 50%"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">        <a href="#" >Home</a>
+
+
+      <li class="nav-item">
+      </li>
+
+      <li class="nav-item">
+        <a  href="#" >Sell book</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" >Buy book</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" >About</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" >cart</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+{% endblock %}
+{#end navbar#}
+
+{#stat carousel#}
+{% block 'carousel' %}
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class=""></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="{% static 'images/c14.jpg' %}" width="100%" height="630">
+        <div class="carousel-caption">
+
+          <div>
+        <caption><h1 style="margin-top: -333px; color:black;">EASY TO REGISTER</h1><p style="color: black; ">You can easily register.</p></caption>
+      </div>
+        <button class="btn third">REGISTER</button>
+
+      </div>
+        </div>
+      <div class="carousel-item active">
+        <img src="{% static 'images/c16.jpg' %}" width="100%" height="630">
+        <div class="carousel-caption">
+
+           <div>
+        <caption><h1 style="margin-top: -333px; color:black;">WANT TO SELL BOOK NOW?</h1><p style="color: white
+         ;background-color: black ">With the help of Bshare you can earn some money and also save your time.</p></caption>
+      </div>
+         <button class="btn third">SELL BOOK</button>
+      </div>
+           </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/c17.jpg' %}" width="100%" height="630">
+        <div class="carousel-caption">
+           <div>
+        <caption><h1 style="margin-top: -333px; color:black;">NEED HELP?</h1><p style="color: white ; background-color: black">Team Bsahre is with you for any kind of help. it's our duty to provide you the best service</p></caption>
+      </div>
+        <button class="btn third">CONTACT</button>
+      </div>
+          </div>
+    </div>
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+  </div>
+{% endblock %}
+{#end carousel#}
+{#start category#}
+{% block 'category' %}
+  <div class="jumbotron text-center">
+  <div class="container">
+
+    <h1>FIND YOUR BOOK</h1>
+    <p style="color:#888;">For your convenience, search book from the category.</p>
+    <p> &#8595;</p>
+
+  </div>
+</div>
+<div class="container-fluid" >
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button victoria-one" style="color: #0d0b17">kids</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button victoria-two" style="color: #0d0b17">Religious</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button victoria-three" style="color: #0d0b17">Novels</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button victoria-four" style="color: #0d0b17">Adult(18+)</a> </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button thar-one" style="color: #0d0b17">Education</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button thar-two" style="color: #0d0b17">Autobiography & Biography</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button thar-three" style="color: #0d0b17">Study Material</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button thar-four" style="color: #0d0b17">Others</a> </div>
+  </div>
+</div>
+{% endblock %}
+{#endcategory#}
+
+<br><br>
+{# instruction start#}
+{% block 'instruction' %}
+  <div class="jumbotron text-center">
+    <p><h1  style="color: black;">HOW TO ORDER BOOK?</h1></p>
+    <p> &#8595;</p>
+  </div>
+
+<div class="container">
+  <div class="row  mx-auto d-block">
+    <div class="how-it-work clearfix">
+            <div class="main-how-it">
+              <h4> Follow <span class="bg-theme"> Steps</span> </h4>
+            </div>
+          <div class="panel panel-default col-sm-10 col-sm-offset-2">
+          <div class="panel-body">
+            <span> 1 </span> <h3 class="step-heading"> Step 1 </h3>
+            First you have to register.
+          </div>
+        </div>
+
+          <div class="panel panel-default col-sm-10 col-sm-offset-2">
+          <div class="panel-body">
+            <span> 2 </span> <h3 class="step-heading"> Step 2 </h3>
+            Select book from category and add to cart your book.
+          </div>
+        </div>
+
+          <div class="panel panel-default col-sm-10 col-sm-offset-2">
+          <div class="panel-body">
+            <span> 3 </span> <h3 class="step-heading"> Step 3 </h3>
+            Now check your cart, and follow payment steps.
+          </div>
+        </div>
+
+          <div class="panel panel-default col-sm-10 col-sm-offset-2">
+          <div class="panel-body">
+            <span> 4 </span> <h3 class="step-heading"> Step 4 </h3>
+            Now you have successfully done your payment and your product have been ordered.
+          </div>
+        </div>
+
+          </div>
+  </div>
+</div>
+{% endblock %}
+{#endinstruction#}
+
+
+{#start footer#}
+
+{% block 'footer' %}
+<div class="footer-bottom-area bg-dark-light section-padding-sm"><!-- (footer) -->
+                <div class="container">
+                    <div class="row widgets footer-widgets">
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-widget widget-about">
+                                <h5 class="widget-title">About Us</h5>
+                                <img src="{% static 'images/logo1.png' %}" style="background-color: white ; width: 50%;">
+                                <p><h5><b style="color: #69c2a7 ;">Bshare</b></h5></p>
+                                <p><i>“Books are love letters (or apologies) passed between us, adding a layer of conversation beyond our spoken words.”</i></p>
+                                -keep share your book
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-widget widget-quick-links">
+                                <h5 class="widget-title">Help center</h5>
+                                <ul>
+                                    <li><a href="#">Sitemap</a></li>
+                                    <li><a href="#">Payment</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-widget widget-quick-links">
+                                <h5 class="widget-title">Customer Service</h5>
+                                <ul>
+                                    <li><a href="#">Shipping Policy</a></li>
+                                    <li><a href="#">Sell your product</a></li>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Return Policy</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="single-widget widget-contact">
+                                <h5 class="widget-title">Contact Us</h5>
+                                <ul>
+                                    <li class="address">
+                                        <span class="icon"><i class="fa fa-map-marker"></i></span>
+                                        <p>Address : 9/10 scheme no. 54 vijaynagar,indore,MP, IN.</p>
+                                    </li>
+                                    <li class="phone">
+                                        <span class="icon"><i class="fa fa-phone"></i></span>
+                                        <p><a href="#">+91 7470730521</a></p>
+                                    </li>
+                                    <li class="fax">
+                                        <span class="icon"><i class="fa fa-fax"></i></span>
+                                        <p><a href="#">+91 7470730521</a></p>
+                                    </li>
+                                    <li class="email">
+                                        <span class="icon"><i class="fa fa-envelope-o"></i></span>
+                                        <p><a href="#">bshare@gmail.com</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+          <ul class="list-unstyled list-inline social text-center">
+            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-google-plus"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02" target="_blank"><i class="fa fa-envelope"></i></a></li>
+          </ul>
+        </div>
+        <hr>
+      </div>
+                </div>
+            </div>
+{% endblock  %}
+{#endfooter#}
+
+
+               <!-- Scripts and jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if (scroll > 250) {
+      $(".navbar").css("background" , "#ab9760");
+    }
+
+    else{
+      $(".navbar").css("background" , "transparent");
+    }
+  })
+});      // Scrolling Effect
+
+
+</script>
+</body>
+</html>

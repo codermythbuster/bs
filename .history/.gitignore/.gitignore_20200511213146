@@ -1,15 +1,14 @@
 # folders 
-.vscode/*
+.vscode/
 .history/*
-.idea/*
-
+.idea/
 
 # extensions 
 .pyc
 
-
 # environments 
-venv/*
-env/*
+
+venv/
+env/
 
 

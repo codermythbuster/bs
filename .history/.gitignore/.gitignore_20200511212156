@@ -1,0 +1,11 @@
+# folders 
+.vscode/
+.history/
+
+# extensions 
+.pyc
+
+# environment 
+
+env/
+venv/

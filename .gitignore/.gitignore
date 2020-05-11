@@ -1,6 +1,7 @@
 # folders 
 .vscode/
 .history/
+.idea/
 
 # extensions 
 .pyc

@@ -1,0 +1,16 @@
+# folders 
+.vscode/*
+.history/*
+.idea/*
+
+
+# extensions 
+*.pyc
+
+
+# environments 
+venv/
+env/
+
+
+

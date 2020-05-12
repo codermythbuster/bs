@@ -13,3 +13,6 @@ def home_view(request):
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSearializer
+
+def aboutus(request):
+    return render(request, 'home/aboutus.html')

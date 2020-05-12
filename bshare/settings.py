@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'bshare.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'USERNAME': 'gHQqhrYaJ0',
-        'NAME': 'gHQqhrYaJ0',
-        'PASSWORD': 'DNJEd51Mqb',
-        'HOST': 'remotemysql.com',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'ec2-54-217-206-236.eu-west-1.compute.amazonaws.com',
+        'NAME': 'd8d11tj6u4g8l4',
+        'USER': 'cntnjjebmpdqhh',
+        'PORT': '5432',
+        'PASSWORD': 'fd5c1093c25702d43aace0c9037e3e1026d6ab13f455a7a8e9ef786bbe4b2815'
     }
 }
 

@@ -1,11 +1,12 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
+
 
 # book keeping record model
 class Book(models.Model):
-    book_id = models.IntegerField(primary_key=True,verbose_name="BOOK ID")
+    book_id = models.IntegerField(primary_key=True, verbose_name="BOOK ID")
     book_name = models.TextField(verbose_name="BOOK NAME")
-    book_category = models.CharField(max_length=100,verbose_name="BOOK CATEGORY")
+    book_category = models.CharField(max_length=100, verbose_name="BOOK CATEGORY")
     book_description = models.TextField(verbose_name="BOOK DESCRIPTION")
     book_author_name = models.CharField(max_length=256, verbose_name="AUTHOR Name")
     book_price_to_sell = models.FloatField(verbose_name="Selling Price")
@@ -26,8 +27,4 @@ class Books_purchased (models.Model):
         return "{} {} {} {}".format(self.trans_id,self.book_id,self.user1,self.user2)
 
    
-
-
-
-
 

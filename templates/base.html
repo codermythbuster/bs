@@ -323,25 +323,30 @@ a.animated-button.thar-four:before {
   border-bottom: 2px solid #ed3b0e ;
 
 }
-li{
 
-}
-.nav-item{
-  margin-right: 40px;
-}
-.navbar-nav a{
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-}
+   li {
 
-.bg-dark-light {
-    background: #323232 !important;
-}
-.bg-theme, .bg-dark, .bg-dark-light, .bg-secondary {
-    color: #ffffff;
-}
-.widgets.footer-widgets .widget-title {
+   }
+
+   .nav-item {
+       margin-right: 40px;
+   }
+
+   .navbar-nav a {
+       text-decoration: none;
+       color: #800000;
+       font-size: 18px;
+   }
+
+   .bg-dark-light {
+       background: #323232 !important;
+   }
+
+   .bg-theme, .bg-dark, .bg-dark-light, .bg-secondary {
+       color: #ffffff;
+   }
+
+   .widgets.footer-widgets .widget-title {
     color: #ffffff;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -669,34 +674,40 @@ section .section-title {
 {#start navbar#}
 
 	<nav class="navbar navbar-expand-lg navbar-default">
-  <a class="navbar-brand" href="#"><img src = "{% static 'images/pogo.png' %}" class="img-fluid w-25" style="border-radius: 50%"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <a class="navbar-brand" href="#"><img src = "{% static 'images/pogo.png' %}" class="img-fluid w-25"
+                                        style="border-radius: 50%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">        <a href="#" >Home</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto"><a href="/">Home</a>
 
 
-      <li class="nav-item">
-      </li>
+                <li class="nav-item">
+                </li>
 
-      <li class="nav-item">
-        <a  href="#" >Sell book</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" >Buy book</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" >About</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" >cart</a>
-      </li>
-    </ul>
+                <li class="nav-item">
+                    <a href="{% url 'home:sell' %}">Sell book</a>
+                </li>
 
-  </div>
-</nav>
+                <li class="nav-item">
+                    <a href="{% url 'home:about' %}">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Cart</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">profile</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
 {% block 'carousel' %}
 {% endblock 'carousel' %}
 {#end carousel#}
@@ -812,18 +823,18 @@ section .section-title {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
-$(document).ready(function(){
-  $(window).scroll(function(){
-    var scroll = $(window).scrollTop();
-    if (scroll > 250) {
-      $(".navbar").css("background" , "#ab9760");
-    }
-
-    else{
-      $(".navbar").css("background" , "transparent");
-    }
-  })
-});// Scrolling Effect
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            if (scroll > 250) {
+                $(".navbar").css("background", "#ab9760");
+            } else {
+                $(".navbar").css("background", "transparent");
+            }
+        });
+        {% block 'script' %}
+        {% endblock %}
+    });// Scrolling Effect
 
 
 </script>

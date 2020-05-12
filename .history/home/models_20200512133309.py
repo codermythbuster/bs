@@ -9,7 +9,7 @@ class Book(models.Model):
     book_description = models.TextField(verbose_name="BOOK DESCRIPTION")
     book_author_name = models.CharField(max_length=256, verbose_name="AUTHOR Name")
     book_price_to_sell = models.FloatField(verbose_name="Selling Price")
-    username = models.ForeignKey(User,verbose_name="USERNAME",on_delete=models.CASCADE)
+    username = models.ForeignKey(User,verbose_name="USERNAME")
     book_status = models.BooleanField(default=False, verbose_name="AVAILABILITY")
     book_image = models.ImageField(verbose_name="IMAGE URL")
     def __str__(self):
@@ -17,14 +17,7 @@ class Book(models.Model):
     
 
 class Books_purchased (models.Model):
-    trans_id = models.AutoField(verbose_name="Transaction ID",primary_key=True)
-    user1 = models.ForeignKey(to=User,to_field=User.USERNAME_FIELD,related_name="UserSold",on_delete=models.DO_NOTHING)
-    user2 = models.ForeignKey(to=User, to_field=User.USERNAME_FIELD,related_name="UserPurchased", on_delete=models.DO_NOTHING)
-    book_id = models.ForeignKey(Book,models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} {} {} {}".format(self.trans_id,self.book_id,self.user1,self.user2)
-
+    trans_id = models.AutoField(verbose_name="Transaction ID")
    
 
 

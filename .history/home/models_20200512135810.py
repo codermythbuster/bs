@@ -17,9 +17,9 @@ class Book(models.Model):
     
 
 class Books_purchased (models.Model):
-    trans_id = models.AutoField(verbose_name="Transaction ID",primary_key=True)
-    user1 = models.ForeignKey(to=User,to_field=User.USERNAME_FIELD,related_name="UserSold",on_delete=models.DO_NOTHING)
-    user2 = models.ForeignKey(to=User, to_field=User.USERNAME_FIELD,related_name="UserPurchased", on_delete=models.DO_NOTHING)
+    trans_id = models.AutoField(verbose_name="Transaction ID")
+    user1 = models.ForeignKey(to_field=User.USERNAME_FIELD,verbose_name="User Sold",on_delete=models.DO_NOTHING)
+    user2 = models.ForeignKey(to_field=User.USERNAME_FIELD,verbose_name="User Purchased",on_delete=models.DO_NOTHING)
     book_id = models.ForeignKey(Book,models.DO_NOTHING)
 
     def __str__(self):

@@ -21,7 +21,10 @@ import home.views as home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home.home_view, name='home'),
-    path('book', include('home.urls', namespace='home')),
+    path('', include('home.urls', namespace='home')),
     path('login/',include(('login.urls','login'),namespace='login')),
-    path('cart/',include('home.urls',namespace='cart')),
+
+
+
+
 ]

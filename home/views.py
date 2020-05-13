@@ -20,3 +20,31 @@ def aboutus(request):
 
 def cart(request):
     return render(request,'home/cart2.html')
+
+
+def shippingp(request):
+    return render(request,'footer/shippingp.html')
+
+
+def profile(request):
+    return render(request,'footer/profile.html')
+
+def returnpolicy(request):
+    return render(request,'footer/returnp.html')
+
+def sitemap(request):
+    return render(request,'footer/sitemap.html')
+
+def faq(request):
+    return render(request,'footer/faq.html')
+
+def contactus(request):
+    return render(request,'footer/contactus.html')
+
+def payment(request):
+    return render(request,'footer/payment.html')
+
+def faq(request):
+    return render(request,'footer/faq.html')
+
+

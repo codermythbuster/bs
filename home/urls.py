@@ -14,5 +14,12 @@ urlpatterns = [
     url('', include('sell.urls')),
     path('aboutus', aboutus, name='about'),
     path('cart/',views.cart,name='cart'),
+    path('shippingpolicy/',views.shippingp,name='shippingp'),
+    path('profile',views.profile,name='profile'),
+    path('Returnpolicy',views.returnpolicy,name='returnpolicy'),
+    path('contactus',views.contactus,name='contactus'),
+    path('sitemap',views.sitemap,name='sitemap'),
+    path('payment', views.payment, name='payment'),
+    path('faq', views.faq, name='faq'),
 
 ]

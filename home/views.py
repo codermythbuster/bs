@@ -16,3 +16,7 @@ class BookViewSet(viewsets.ModelViewSet):
 
 def aboutus(request):
     return render(request, 'home/aboutus.html')
+
+
+def cart(request):
+    return render(request,'home/cart2.html')

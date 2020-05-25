@@ -1,17 +1,11 @@
-{% extends 'base.html' %}
-{% block 'title' %}cart{% endblock 'title' %}
+{% extends 'base.html ' %}
+{% block 'title' %}
+   cart
+{% endblock 'title' %}
 
 {% load static %}
-
-{#	<meta charset="utf-8">#}
-{#	<meta name="viewport"  content="width-device-width , initial-scale-1">#}
-{#	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">#}
-{#  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>#}
-{#  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>#}
-{#  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>#}
-{#  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">#}
-{#   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">#}
 {% block 'css' %}
+
    <style type="text/css">
    	@import "compass/css3";
 /* Global "table" column settings */
@@ -212,18 +206,20 @@
 	 .totals .totals-item .totals-value {
 		 width: 40%;
 	}
-} 
+}
    </style>
+
 {% endblock 'css' %}
 
 
-{% block 'script' %}
+
+   <script type="text/javascript">
 
    	 $(document).ready(function(){
 
    	 	/* Set rates + misc */
 var taxRate = 0.05;
-var shippingRate = 15.00; 
+var shippingRate = 15.00;
 var fadeTime = 300;
 
 
@@ -241,17 +237,17 @@ $('.product-removal button').click( function() {
 function recalculateCart()
 {
   var subtotal = 0;
-  
+
   /* Sum up row totals */
   $('.product').each(function () {
     subtotal += parseFloat($(this).children('.product-line-price').text());
   });
-  
+
   /* Calculate totals */
   var tax = subtotal * taxRate;
   var shipping = (subtotal > 0 ? shippingRate : 0);
   var total = subtotal + tax + shipping;
-  
+
   /* Update totals display */
   $('.totals-value').fadeOut(fadeTime, function() {
     $('#cart-subtotal').html(subtotal.toFixed(2));
@@ -276,7 +272,7 @@ function updateQuantity(quantityInput)
   var price = parseFloat(productRow.children('.product-price').text());
   var quantity = $(quantityInput).val();
   var linePrice = price * quantity;
-  
+
   /* Update line price display and recalc cart totals */
   productRow.children('.product-line-price').each(function () {
     $(this).fadeOut(fadeTime, function() {
@@ -284,7 +280,7 @@ function updateQuantity(quantityInput)
       recalculateCart();
       $(this).fadeIn(fadeTime);
     });
-  });  
+  });
 }
 
 
@@ -300,11 +296,13 @@ function removeItem(removeButton)
 }
 
    	 	});
-{% endblock 'script' %}
+   </script>
 
 
 {% block 'instructions' %}
-	<h1 style="font-family:inherit; color:#d91c1c; margin-top: 5%   ">Shopping Cart</h1>
+
+
+	<h1 style="font-family:inherit; color:#d91c1c; margin-top: 7%   ">Shopping Cart</h1>
 
 
 <div class="shopping-cart">
@@ -320,7 +318,7 @@ function removeItem(removeButton)
 
   <div class="product">
     <div class="product-image">
-      <img src="{% static 'images/abc.JPG' %}">
+       <img src="{% static 'images/abc.jpg' %}" >
     </div>
     <div class="product-details">
       <div class="product-title" style="color: green;">Harry Potter and the Cursed Child</div>
@@ -343,7 +341,7 @@ function removeItem(removeButton)
 
   <div class="product">
     <div class="product-image">
-      <img src="{% static 'images/bca.jpg' %}">
+       <img src="{% static 'images/bca.jpg' %}" >
     </div>
     <div class="product-details">
       <div class="product-title" style="color: green;">Mohandas k gandhi autobiography</div>
@@ -379,8 +377,9 @@ function removeItem(removeButton)
       <div class="totals-value" id="cart-total">90.57</div>
     </div>
   </div>
-      
+
       <button class="checkout">Checkout</button>
 
 </div>
-{% endblock 'instructions'%}
+
+{% endblock 'instructions' %}

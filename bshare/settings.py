@@ -24,8 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!gb_xpk*t)1xyzhykn!jpc+^3$&mxon$neoto-omg8+44s0l8='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 
@@ -93,11 +92,11 @@ WSGI_APPLICATION = 'bshare.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'ec2-54-217-206-236.eu-west-1.compute.amazonaws.com',
-        'NAME': 'd8d11tj6u4g8l4',
-        'USER': 'cntnjjebmpdqhh',
+        'HOST': 'ec2-54-247-118-139.eu-west-1.compute.amazonaws.com',
+        'NAME': 'db5pr40fq30vfc',
+        'USER': 'bmcqugaznargqx',
         'PORT': '5432',
-        'PASSWORD': 'fd5c1093c25702d43aace0c9037e3e1026d6ab13f455a7a8e9ef786bbe4b2815'
+        'PASSWORD': '590bd3aeabfb8f639646b39b11d627901ee61366e7cbb1996e352cf086e4c05d'
     }
 }
 
@@ -126,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'ASIA/KOLKATA'
 
 USE_I18N = True
 
@@ -138,13 +137,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
-
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'home/static'),
+
 )
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'CDN-LOCAL')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
+
 # heroku activate
 django_heroku.settings(locals())

@@ -1,10 +1,14 @@
 {% extends 'base.html ' %}
 {% block 'title' %}
     kids
-{% endblock %}
+{% endblock  %}
 
 {% block 'css' %}
     <style type="text/css">
+
+    .body{
+        margin-top: 5%;
+    }
 
         .card {
             margin: 10px; /* for codepen */
@@ -170,6 +174,7 @@
 {% endblock %}
 
 {% block 'script' %}
+
     var elements = document.querySelectorAll('.ripple-effect');
 
     for (var i = 0; i < elements.length; i++) {
@@ -178,7 +183,7 @@
     e.preventDefault;
     var elm =  document.querySelector('.wrapper');
 
-    if(elm.className  !== 'marked')
+    if(elm.className  != 'marked')
     elm.classList.add('marked');
 
 
@@ -187,235 +192,48 @@
     elm.classList.add("active");
     });
     }
-    var myurl = "http://localhost:8000/bookbooks/";
-
-    $(".data-holder").ready( function ()
-    {
-
-    $.get(url, function(data, status) {
-
-    //$(".output").text( JSON.stringify(data) );
-    //var myData = JSON.parse(JSON.stringify(data));
-
-    let result = "";
-    for (let index = 0; index < data.length; index++) {
-    let obj=data[index];
-    result=result +"
-    <div class='card-img-top d-flex justify-content-center'>"
-        +"<img src='"+obj.book_image+"' alt='Card image cap'></div>"
-    +"
-    <div class='card-body'>"
-        +" <h5 class='card-title'>"+obj.book_name+"</h5>"
-        +"
-        <p class='card-text text-right'>+
-            <button class='btn ripple-effect d-flex align-items-center justify-content-center'>
-                <i class='fas fa-cart-plus'></i>
-            </button>
-    </div>" }
-    result=result+ "" ;
 
 
+    $.get( "/books/", function( data ) {
+  let newdata=JSON.stringify(data);
+    res = ""
+    for (i=0;i<data.length;i++){
+    if(data[i].book_category =='kids'){
+    res= res +" <div class='card output' style='width: 15rem;'>"
+        +"<div class='card-img-top d-flex justify-content-center'>"
+           + "<img src='"+ data[i].book_image +"' alt='Card image cap'>"
+       +" </div>"
+        + "<div class='card-body'>"
+          +"  <h5 class='card-title'>"+ data[i].book_name+"</h5>"
+            +"<p class='card-text text-right'>"+data[i].book_price_to_sell+"</p>"
+            +"<button class='btn ripple-effect d-flex align-items-center justify-content-center'>"
+             +"   <i class='fas fa-cart-plus'></i>"
+           +" </button>"
+       +" </div>"
+    +"</div>"
+    }
+    }
+    $('.result').html(res);
 
-    $(".result").html(result); } );
-
-    })
-
-    });
-
+});
 {% endblock %}
 
-<div>
-    <h1 style="color: #ed3737">
+{% block 'instructions' %}
+
+<div class="body">
+    <h1 style="color: #ed3737 ; mar">
         <center>Kids section</center>
     </h1>
 </div>
 <hr style=" border :1px solid #997976; ">
 
-<div class="d-flex justify-content-center flex-wrap data-holder" style="margin: 50px;">
-    <div class="card output" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
 
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
+<div class="result row m-2 "></div>
 
 <div class="wrapper">
-    <button class="btn shop d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-    </button>
-    <div class="target d-flex align-items-center justify-content-center"><i class="fas fa-box"></i></div>
+  <button class="btn shop d-flex align-items-center justify-content-center">
+    <i class="fas fa-cart-plus"></i>
+  </button>
+  <div class="target d-flex align-items-center justify-content-center"><i class="fas fa-box"></i></div>
 </div>
-
-<div class="d-flex justify-content-center flex-wrap" style="margin: 50px;">
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
-
-<div class="wrapper">
-    <button class="btn shop d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-    </button>
-    <div class="target d-flex align-items-center justify-content-center"><i class="fas fa-box"></i></div>
-</div>
-
-<div class="d-flex justify-content-center flex-wrap" style="margin: 50px;">
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem;">
-        <div class="card-img-top d-flex justify-content-center">
-            <img src="http://placehold.it/100x100" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text text-right">$64,50</p>
-            <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-                <i class="fas fa-cart-plus"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
-
-<div class="wrapper">
-    <button class="btn shop d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-    </button>
-    <div class="target d-flex align-items-center justify-content-center"><i class="fas fa-box"></i></div>
-</div>
-
-</body>
-</html>
+{% endblock %}

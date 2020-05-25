@@ -1,230 +1,234 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>kids book</title>
-	<meta charset="utf-8">
-	<meta name="viewport"  content="width-device-width , initial-scale-1">
-	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"> 
+{% extends 'base.html ' %}
+{% block 'title' %}
+    Novels
+{% endblock  %}
 
-   <style type="text/css">
-   	
-   	.card { 
-  margin: 10px; /* for codepen */
-  border:none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-.card:hover {
-  cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-.card-img-top { background-color: grey; }
-img {
-  border-radius: 50%;
-  margin: 20px 0;
-}
-.card-text{
-  font-size: 20px;
-  font-weight: 800;
-  color: #ed5153;
-  margin: 0;
-}
-.card-body{
-  position: relative;
-}
+{% block 'css' %}
+    <style type="text/css">
 
-.btn {
-  position: absolute;
-  top: -17px;
-  right: 10px;
-  width: 34px;
-  height: 34px;
-  border-radius:50%;
-  padding: 0;
-  background-color: #ed5153;
-  border-color: #ed5153;
-  color: #fff;
-}
-
-.btn:hover {
-  background-color: #dc3032;
-  border-color: #dc3032; 
-  color: #fff;
-}
-
-.btn:focus {
-  box-shadow: none;
-}
-
-.target {
-  color: #dc3032;
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top:0;
-  transform: translateY(-100px);
-  opacity: 0;
-}
-.wrapper {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  top: auto;
-}
-.shop {
-  position: relative;
-  top:0;
-  left:0;
-  width: 60px;
-  height: 60px;
-  z-index: 2;
-}
-
-.wrapper.active .target { animation: fall cubic-bezier(0.6, 0.04, 0.98, 0.335) .3s, opacity ease .3s; }
-.wrapper.active .shop { animation: bump ease .2s .4s ; }
-.wrapper.active::after { animation: marker ease .2s .4s ; }
-.wrapper::before {
-  content:'';
-  height: 65px;
-  width: 65px;
-  position: absolute;
-  display: flex;
-  border-radius: 50%;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-}
-
-.wrapper.active::before { animation: ripple ease .3s .4s;}
-
-.wrapper.marked::after {
-  content:'';
-     display: block;
-  position: absolute;
-  top: 3px;
-  right:3px;
-  width: 15px;
-  height: 15px;
-  background-color: #dc3032;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  z-index: 100;
-}
-@keyframes ripple { 
-    0% { border: 4px solid #dc3032; visibility: visible;  opacity: 1; }
-    100% { border: 4px solid #dc3032; opacity: 0; width: 120px; height: 120px; }
-}
-
-@keyframes fall {
-  0%{
-      opacity: 1;
-  }
-    100% {
-      transform: translateY(0);
-      transform: scale(2);
-      opacity: 1;
+    .body{
+        margin-top: 5%;
     }
-}
 
-@keyframes bump {
-    50% {
-      height: 58px;
-      width: 62px;
-      transform: translateY(20px);
-    }
-}
-@keyframes marker {
-    50% {
-      transform: translateY(20px);
-    }
-}
-   </style>
+        .card {
+            margin: 10px; /* for codepen */
+            border: none;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
 
-   <script type="text/javascript">
-   	$(document).ready(function(){
-   var elements = document.querySelectorAll('.ripple-effect');
+        .card:hover {
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
 
-  for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("click", function (e) { 
-      
-      e.preventDefault;
-      var elm =  document.querySelector('.wrapper');
-      
-      if(elm.className  !== 'marked')
-        elm.classList.add('marked');
-         
-      
-      elm.classList.remove("active");
-      void elm.offsetWidth;
-      elm.classList.add("active");
+        .card-img-top {
+            background-color: #f1f1f1;
+        }
+
+        img {
+
+            margin: 20px 0;
+        }
+
+        .card-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ed5153;
+            margin: 0;
+        }
+
+        .card-body {
+            position: relative;
+        }
+
+        .btn {
+            position: absolute;
+            top: -17px;
+            right: 10px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            padding: 0;
+            background-color: #ed5153;
+            border-color: #ed5153;
+            color: #fff;
+        }
+
+        .btn:hover {
+            background-color: #dc3032;
+            border-color: #dc3032;
+            color: #fff;
+        }
+
+        .btn:focus {
+            box-shadow: none;
+        }
+
+        .target {
+            color: #dc3032;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 0;
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+
+        .wrapper {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            top: auto;
+        }
+
+        .shop {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            z-index: 2;
+        }
+
+        .wrapper.active .target {
+            animation: fall cubic-bezier(0.6, 0.04, 0.98, 0.335) .3s, opacity ease .3s;
+        }
+
+        .wrapper.active .shop {
+            animation: bump ease .2s .4s;
+        }
+
+        .wrapper.active::after {
+            animation: marker ease .2s .4s;
+        }
+
+        .wrapper::before {
+            content: '';
+            height: 65px;
+            width: 65px;
+            position: absolute;
+            display: flex;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .wrapper.active::before {
+            animation: ripple ease .3s .4s;
+        }
+
+        .wrapper.marked::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 15px;
+            height: 15px;
+            background-color: #dc3032;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            z-index: 100;
+        }
+
+        @keyframes ripple {
+            0% {
+                border: 4px solid #dc3032;
+                visibility: visible;
+                opacity: 1;
+            }
+            100% {
+                border: 4px solid #dc3032;
+                opacity: 0;
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @keyframes fall {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+                transform: scale(2);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bump {
+            50% {
+                height: 58px;
+                width: 62px;
+                transform: translateY(20px);
+            }
+        }
+
+        @keyframes marker {
+            50% {
+                transform: translateY(20px);
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block 'script' %}
+
+    var elements = document.querySelectorAll('.ripple-effect');
+
+    for (var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("click", function (e) {
+
+    e.preventDefault;
+    var elm =  document.querySelector('.wrapper');
+
+    if(elm.className  != 'marked')
+    elm.classList.add('marked');
+
+
+    elm.classList.remove("active");
+    void elm.offsetWidth;
+    elm.classList.add("active");
     });
-  }
+    }
+
+
+    $.get( "/books/", function( data ) {
+  let newdata=JSON.stringify(data);
+    res = ""
+    for (i=0;i<data.length;i++){
+    if(data[i].book_category =='novels'){
+    res= res +" <div class='card output' style='width: 15rem;'>"
+        +"<div class='card-img-top d-flex justify-content-center'>"
+           + "<img src='"+ data[i].book_image +"' alt='Card image cap'>"
+       +" </div>"
+        + "<div class='card-body'>"
+          +"  <h5 class='card-title'>"+ data[i].book_name+"</h5>"
+            +"<p class='card-text text-right'>"+data[i].book_price_to_sell+ "&#8377" +"</p>"
+            +"<button class='btn ripple-effect d-flex align-items-center justify-content-center'>"
+             +"   <i class='fas fa-cart-plus'></i>"
+           +" </button>"
+       +" </div>"
+    +"</div>"
+    }
+    }
+    $('.result').html(res);
+
 });
-   </script>
-</head>
-<body>
+{% endblock %}
 
-	<div><h1 style="color: #ed3737"><center>Novels</center></h1></div>
-	<hr style=" border :1px solid #997976; ">
+{% block 'instructions' %}
 
-	 <div class="d-flex justify-content-center flex-wrap" style="margin: 50px;">
-  <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-   
-   <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
+<div class="body">
+    <h1 style="color: #ed3737 ; mar">
+        <center>Novels</center>
+    </h1>
 </div>
+<hr style=" border :1px solid #997976; ">
 
+
+<div class="result row m-2 "></div>
 
 <div class="wrapper">
   <button class="btn shop d-flex align-items-center justify-content-center">
@@ -232,130 +236,4 @@ img {
   </button>
   <div class="target d-flex align-items-center justify-content-center"><i class="fas fa-box"></i></div>
 </div>
-
- <div class="d-flex justify-content-center flex-wrap" style="margin: 50px;">
-  <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-   
-   <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-</div>
-
-
-<div class="wrapper">
-  <button class="btn shop d-flex align-items-center justify-content-center">
-    <i class="fas fa-cart-plus"></i>
-  </button>
-  <div class="target d-flex align-items-center justify-content-center"><i class="fas fa-box"></i></div>
-</div>
-
- <div class="d-flex justify-content-center flex-wrap" style="margin: 50px;">
-  <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-   
-   <div class="card" style="width: 15rem;">
-    <div class="card-img-top d-flex justify-content-center">
-    <img  src="http://placehold.it/100x100" alt="Card image cap">
-      </div>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text text-right">$64,50</p>
-      <button class="btn ripple-effect d-flex align-items-center justify-content-center">
-        <i class="fas fa-cart-plus"></i>
-      </button>
-    </div>
-  </div>
-</div>
-
-
-<div class="wrapper">
-  <button class="btn shop d-flex align-items-center justify-content-center">
-    <i class="fas fa-cart-plus"></i>
-  </button>
-  <div class="target d-flex align-items-center justify-content-center"><i class="fas fa-box"></i></div>
-</div>
-
-</body>
-</html>
+{% endblock %}

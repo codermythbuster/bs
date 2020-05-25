@@ -176,24 +176,24 @@ img{
                                         {% csrf_token %}
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder=" First Name *" name = 'fname' />
+                                            <input type="text" id="fname" onblur="validate()" class="form-control" placeholder=" First Name *" name = 'fname' /><div id="div1"></div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="last name" name="lname" />
+                                            <input type="text" id="lname" onblur="validate()" class="form-control" placeholder="last name" name="lname" /><div id="div3"></div>
                                         </div>
                                        
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Username"name="uname" />
+                                            <input type="text" id="uname" class="form-control" placeholder="Username"name="uname" /><div id="div5"></div>
                                         </div>
 
 
                                     </div>
                                     <div class="col-md-6">
                                     	 <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email *" name="email" />
+                                            <input type="email" id="txtEmail" onblur="validate()" class="form-control" placeholder="Email *" name="email" /><div id="div2"></div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="password" name="password" />
+                                            <input type="password" id="pass" onblur="validate()" class="form-control" placeholder="password" name="password" /><div id="div4"></div>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control" placeholder="Confirm Password *" name="pass2" />
@@ -201,6 +201,73 @@ img{
                                         <input type="submit" class="btnRegister"  value="Register"/>
                                     </div>
                                 </div>
+
+                                <script type = "text/javascript">
+
+      function validate() {
+          var fname = document.getElementById("fname").value;
+          var lname = document.getElementById("lname").value;
+         var email = document.getElementById('txtEmail');
+         var uname = document.getElementById("uname").value;
+          var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+          var pass = document.getElementById("pass");
+          var strongRegex =  new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+                if(fname==="")
+                {
+                    document.getElementById("div1").innerHTML="Please enter a value";
+                    document.getElementById("div1").style.color="Red";
+
+                }
+                else
+                {
+                   document.getElementById("div1").innerHTML="Valid";
+                    document.getElementById("div1").style.color="Green";
+                }
+                 if(lname==="")
+                {
+                    document.getElementById("div3").innerHTML="Please enter a value";
+                    document.getElementById("div3").style.color="Red";
+
+                }
+                else
+                {
+                   document.getElementById("div3").innerHTML="Valid";
+                    document.getElementById("div3").style.color="Green";
+                }
+                if(uname==="")
+                {
+                    document.getElementById("div5").innerHTML="Please enter a value";
+                    document.getElementById("div5").style.color="Red";
+
+                }
+                else
+                {
+                   document.getElementById("div5").innerHTML="Valid";
+                    document.getElementById("div5").style.color="Green";
+                }
+
+    if (!filter.test(email.value)) {
+     document.getElementById("div2").innerHTML="Enter the correct email address";
+      document.getElementById("div2").style.color="Red";
+       }
+       else{
+           document.getElementById("div2").innerHTML="Valid email address";
+      document.getElementById("div2").style.color="Green";
+       }
+
+    if (!strongRegex.test(pass.value)) {
+     document.getElementById("div4").innerHTML="Invalid";
+      document.getElementById("div4").style.color="Red";
+       }
+    else
+       {
+     document.getElementById("div4").innerHTML="Strong and valid";
+      document.getElementById("div4").style.color="Green";
+       }
+
+
+    }
+</script>
 
                             </div>
                     </div>

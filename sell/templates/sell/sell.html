@@ -13,9 +13,9 @@
             height: 100%
         }
 
-        #grad1 {
+        body {
             background-color:: #9C27B0;
-            background-image: linear-gradient(120deg, #FF4081, #81D4FA)
+            background-image: linear-gradient(120deg, #ffd89b,#19547b)
         }
 
         #msform {
@@ -240,96 +240,87 @@
             width: 100%;
             object-fit: cover
         }
+    #grad1{
+           background-color: #9C27B0;
+            background-image: linear-gradient(120deg, #ffd89b,#19547b)
+        }
+    .btn-submit{
+        padding:1%  ;
+        margin:auto;
+        color : maroon;
+         background-color: #9C27B0;
+            background-image: linear-gradient(120deg, #ffd89b,#19547b)
+
+    }
+    .btn-submit:hover{
+
+        color:white;
+        background: #8393ce;
+    }
 
     </style>
 
 {% endblock 'css' %}
 
-{% block 'carousel' %}
 
+
+{% block 'instructions' %}
+
+    {% if message  %}
+        <div>
+        {{ message }}
+        </div>
+    {% endif %}
     <div class="container-fluid py-5 " id="grad1">
         <div class="row justify-content-center mt-0">
             <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                     <h2><strong>Sell your book :)</strong></h2>
-                    <p>Fill all form field to go to next step</p>
+                    <p>Fill the form to sell your book on our portal</p>
                     <div class="row">
-                        <div class="col-md-12 mx-0">
-                            <form id="msform">
+                        <div id="msform" class="col-md-12 mx-0">
+                            <form  method="POST" enctype="multipart/form-data">
+
+                                {% csrf_token %}
                                 <!-- progressbar -->
-                                <ul id="progressbar">
-                                    <li class="active" id="account"><strong>Personal</strong></li>
-                                    <li id="personal"><strong>Product(1)</strong></li>
-                                    <li id="payment"><strong>Product(2)</strong></li>
-                                    <li id="confirm"><strong>Finish</strong></li>
-                                </ul> <!-- fieldsets -->
 
                                 <fieldset>
                                     <div class="form-card">
-                                        <h2 class="fs-title">personal Information</h2>
+                                        <h2 class="fs-title">Book Information</h2>
+                                        <input type="text" id="btitle" placeholder="Book Name" name="book_name"/>
+                                        <input type="text" id="author" placeholder="Author name" name="book_author_name"/>
+                                        <input type="text" id="Detail" placeholder="book Description" name="book_description"/>
+                                        <select  id = "book_category" class="w-100 p-2 bg-light text-center text-secondary mb-3  border-bottom border-secondary" name="book_category">
+                                         <option value="Default"> <strong> Select 'BOOK' Category  </strong> </option>
 
-                                        <input type="text" name="uname" placeholder="User Name"/>
-                                        <input type="text" name="phno" placeholder="Contact No."/>
-                                        <input type="text" name="phno_2" placeholder="Alternate Contact No."/>
-                                        <input type="email" name="email" placeholder="Email Id"/>
-                                        <input type="text" name="address" placeholder="address"/>
+                                            <option > <strong> Religious </strong> </option>
+                                            <option value ="kids"> <strong> Kids </strong> </option>
+                                        <option value ="novels"> <strong> Novels </strong> </option>
+                                        <option value ="adult"> <strong> Adult(18+) </strong> </option>
+                                        <option value ="education"> <strong> Education</strong> </option>
+                                        <option value ="biography"> <strong> Auto-Biography & Biography </strong> </option>
+                                        <option value ="study material"> <strong> Study Material </strong> </option>
+                                        <option value ="others"> <strong> Others </strong> </option>
+
+                                        </select>
+                                        <input type="text" id="eprice" placeholder="Expected price" name="book_price_to_sell"/>
                                     </div>
-                                    <input type="button" name="next" class="next action-button" value="Next Step"/>
-                                </fieldset>
 
-
-                                <fieldset>
                                     <div class="form-card">
-                                        <h2 class="fs-title">Product Information</h2> <input type="text" name="btitle"
-                                                                                             placeholder="Book title"/>
-                                        <input type="text" name="Author" placeholder="Author name"/> <input type="text"
-                                                                                                            name="Detail"
-                                                                                                            placeholder="book Detail"/>
-                                        <input type="text" name="eprice" placeholder="Expected price"/>
-                                    </div>
-                                    <input type="button" name="previous" class="previous action-button-previous"
-                                           value="Previous"/> <input type="button" name="next"
-                                                                     class="next action-button" value="Next Step"/>
-                                </fieldset>
+                                        <h2 class="fs-title">Add book picture</h2>
 
-
-                                <fieldset>
-                                    <div class="form-card">
-                                        <h2 class="fs-title">Add product picture</h2>
-
-                                        <div class="col-md-4">
+                                        <div class="col">
                                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
-                                                 alt="" style="border-radius:0% "/>
+                                                 alt="" style="border-radius:0% "  class="img-thumbnail "/>
                                             <div class="file btn" style="width: 272px; height: 60px">
 
-                                                <input type="file" name="file"/>
+                                                <input type="file" id="file"  name= "book_image" class=" p-2 mx-1"/>
                                             </div>
-                                        </div>
 
-
-                                    </div>
-                                    <input type="button" name="previous" class="previous action-button-previous"
-                                           value="Previous"/> <input type="button" name="make_payment"
-                                                                     class="next action-button" value="Confirm"/>
-                                </fieldset>
-
-                                <fieldset>
-                                    <div class="form-card">
-                                        <h2 class="fs-title text-center">Success !</h2> <br><br>
-                                        <div class="row justify-content-center">
-                                            <div class="col-3"><img
-                                                    src="https://img.icons8.com/color/96/000000/ok--v2.png"
-                                                    class="fit-image"></div>
-                                        </div>
-                                        <br><br>
-                                        <div class="row justify-content-center">
-                                            <div class="col-7 text-center">
-                                                <h5>You Have Successfully Added </h5>
-                                            </div>
+                                            <center>  <BUTTON class = "btn-submit w-50 rounded" id = "submit-button" type="submit"  >Add book </BUTTON></center>
                                         </div>
                                     </div>
                                 </fieldset>
-
                             </form>
                         </div>
                     </div>
@@ -337,75 +328,8 @@
             </div>
         </div>
     </div>
-{% endblock 'carousel' %}
 
-{% block 'script' %}
-    var current_fs, next_fs, previous_fs; //fieldsets
-    var opacity;
-
-    $(".next").click(function(){
-
-    current_fs = $(this).parent();
-    next_fs = $(this).parent().next();
-
-    //Add Class Active
-    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-    //show the next fieldset
-    next_fs.show();
-    //hide the current fieldset with style
-    current_fs.animate({opacity: 0}, {
-    step: function(now) {
-    // for making fielset appear animation
-    opacity = 1 - now;
-
-    current_fs.css({
-    'display': 'none',
-    'position': 'relative'
-    });
-    next_fs.css({'opacity': opacity});
-    },
-    duration: 600
-    });
-    });
-
-    $(".previous").click(function(){
-
-    current_fs = $(this).parent();
-    previous_fs = $(this).parent().prev();
-
-    //Remove class active
-    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-    //show the previous fieldset
-    previous_fs.show();
-
-    //hide the current fieldset with style
-    current_fs.animate({opacity: 0}, {
-    step: function(now) {
-    // for making fielset appear animation
-    opacity = 1 - now;
-
-    current_fs.css({
-    'display': 'none',
-    'position': 'relative'
-    });
-    previous_fs.css({'opacity': opacity});
-    },
-    duration: 600
-    });
-    });
-
-    $('.radio-group .radio').click(function(){
-    $(this).parent().find('.radio').removeClass('selected');
-    $(this).addClass('selected');
-    });
-
-    $(".submit").click(function(){
-    return false;
-    })
-
-{% endblock %}
+{% endblock  %}
 
 
 

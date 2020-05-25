@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'bshare.urls'
@@ -72,7 +72,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'home/templates')
+            os.path.join(BASE_DIR, 'home/templates'),
+             os.path.join(BASE_DIR, 'sell/templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -148,7 +149,7 @@ STATICFILES_DIRS = (
 
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'CDN-LOCAL')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')

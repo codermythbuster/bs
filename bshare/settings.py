@@ -25,7 +25,7 @@ SECRET_KEY = '!gb_xpk*tP)A1NxDyEzYhykn!jpc+^3$&mxon$neSoWtAoT-oImg8+44s0l8='
 
 # SECURITY WARNING: don't run with debug turned on in production!
  # DEBUG = True  # for development
- DEBUG = False  # for production switch
+DEBUG = False  # for production switch
 #ALLOWED_HOSTS = ['*']
 # if DEBUG is False uncomment below and comment up
 ALLOWED_HOSTS = ['http://bookshareindia.herokuapp.com/',]

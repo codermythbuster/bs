@@ -24,11 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!gb_xpk*tP)A1NxDyEzYhykn!jpc+^3$&mxon$neSoWtAoT-oImg8+44s0l8='
 
 # SECURITY WARNING: don't run with debug turned on in production!
- # DEBUG = True  # for development
-DEBUG = False  # for production switch
-#ALLOWED_HOSTS = ['*']
+DEBUG = True  # for development
+#DEBUG = False  # for production switch
+ALLOWED_HOSTS = ['*']
 # if DEBUG is False uncomment below and comment up
-ALLOWED_HOSTS = ['http://bookshareindia.herokuapp.com/',]
+#ALLOWED_HOSTS = ['bookshareindia.herokuapp.com',]
 
 
 # Application definition
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'bshare.urls'
@@ -72,7 +72,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'home/templates')
+            os.path.join(BASE_DIR, 'home/templates'),
+             os.path.join(BASE_DIR, 'sell/templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -140,7 +141,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
@@ -148,7 +149,7 @@ STATICFILES_DIRS = (
 
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'CDN-LOCAL')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')

@@ -5,17 +5,24 @@ from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 def loginsignup(request):
-    msg =""
-    if request.method=='POST':
+    """User Login View """
+    msg=""
+    if request.user.is_authenticated:
+        return redirect('home')
+
+    if request.method == 'POST':
         username = request.POST.get('uname')
         password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
+        user = authenticate(username=username, password=password)
+        if user:
+            if user.is_active:
+                auth.login(request,user)
+                return HttpResponseRedirect(reverse('phasetwo:welcome'))
+            else:
+                msg = "Your account was inactive. please contact Project admin by contact us form on home page"
         else:
-            msg = "please check username/password"
-    return render(request,'loginsignup.html',{'message':msg})
+            msg = " cant login given usename/password is invalid!!!! "
+    return render(request, 'huskdata/Log-in.html',context={'message':msg})
 
 def register(request):
     if request.method=='POST':

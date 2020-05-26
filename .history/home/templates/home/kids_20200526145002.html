@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'base.html ' %}
 {% block 'title' %}
-    other
+    kids
 {% endblock  %}
 
 {% block 'css' %}
@@ -198,7 +198,7 @@
   let newdata=JSON.stringify(data);
     res = ""
     for (i=0;i<data.length;i++){
-    if(data[i].book_category =='other'){
+    if(data[i].book_category =='kids'){
     res= res +" <div class='card output' style='width: 15rem;'>"
         +"<div class='card-img-top d-flex justify-content-center'>"
            + "<img src='"+ data[i].book_image +"' alt='Card image cap'>"
@@ -222,7 +222,7 @@
 
 <div class="body">
     <h1 style="color: #ed3737 ; mar">
-        <center>Other books </center>
+        <center>Kids section</center>
     </h1>
 </div>
 <hr style=" border :1px solid #997976; ">

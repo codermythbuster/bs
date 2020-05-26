@@ -7,14 +7,14 @@ from django.contrib.auth.hashers import make_password
 def loginsignup(request):
     msg =""
     if request.method=='POST':
-        username = request.POST.get('uname')
-        password = request.POST.get('password')
-        auth = authenticate(request, username=username, password=password)
-        if auth is not None:
-            login(request, auth)
-            return redirect('home')
-        else :
-            msg = 'please check the username/password'
+        username = request.POST['uname']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+        return redirect('home')
+    else:
+        msg = "please check username/password"
        
     return render(request,'loginsignup.html',{'message':msg})
 

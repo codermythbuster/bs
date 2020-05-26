@@ -9,17 +9,13 @@ def loginsignup(request):
     if request.method=='POST':
         username = request.POST.get('uname')
         password = request.POST.get('password')
-
-
-        try:
-            auth = authenticate(request, username=username, password=password)
-            if auth is not None:
-                login(request, auth)
-                return redirect('home')
-            else :
-                msg = 'please check the username/password'
-        except Exception as  e :
-            print(e)
+        auth = authenticate(request, username=username, password=password)
+        if auth is not None:
+            login(request, auth)
+            return redirect('home')
+        else :
+            msg = 'please check the username/password'
+       
     return render(request,'loginsignup.html',{'message':msg})
 
 def register(request):

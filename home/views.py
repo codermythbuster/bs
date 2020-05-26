@@ -34,7 +34,7 @@ def cart(request):
 
 
 def shippingp(request):
-    validity = request.user.is_authentiscated
+    validity = request.user.is_authenticated
     context = {'user': request.user.username,
                'validity': validity}
     return render(request,'footer/shippingp.html',context)

@@ -24,8 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!gb_xpk*tP)A1NxDyEzYhykn!jpc+^3$&mxon$neSoWtAoT-oImg8+44s0l8='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # for development
-#DEBUG = False  # for production switch
+#DEBUG = True  # for development
+DEBUG = False  # for production switch
 ALLOWED_HOSTS = ['*']
 # if DEBUG is False uncomment below and comment up
 #ALLOWED_HOSTS = ['bookshareindia.herokuapp.com','localhost',]

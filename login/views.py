@@ -17,7 +17,7 @@ def loginsignup(request):
         if user:
             if user.is_active:
                 auth.login(request,user)
-                return HttpResponseRedirect(reverse('phasetwo:welcome'))
+                return HttpResponseRedirect(reverse('home'))
             else:
                 msg = "Your account was inactive. please contact Project admin by contact us form on home page"
         else:

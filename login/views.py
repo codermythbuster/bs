@@ -15,7 +15,7 @@ def loginsignup(request):
     if request.method == 'POST':
         username = request.POST.get('uname')
         password = request.POST.get('password')
-        user = authenticate(username=username, password=make_password(password))
+        user = authenticate(username=username, password=password)
         if user:
             if user.is_active:
                 auth.login(request,user)

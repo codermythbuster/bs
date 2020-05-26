@@ -15,7 +15,7 @@ def loginsignup(request):
     if request.method == 'POST':
         username = request.POST.get('uname')
         password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
+        user = authenticate(username=username, password=make_password(password))
         if user:
             if user.is_active:
                 auth.login(request,user)
@@ -36,7 +36,7 @@ def register(request):
         password = request.POST.get('password')
 
         try:
-            user_obj = User(username=username,first_name=first_name,last_name=last_name,email=email,password=password)
+            user_obj = User(username=username,first_name=first_name,last_name=last_name,email=email,password=make_password(password))
             user_obj.save()
             login(request, user_obj)
             return redirect('home') # redirect to the page you want to show after login

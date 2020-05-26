@@ -12,8 +12,9 @@ def loginsignup(request):
 
 
         try:
-            auth = authenticate(username=username, password=password)
-            if auth:
+            auth = authenticate(request, username=username, password=password)
+            if auth is not None:
+                login(request, auth)
                 return redirect('home')
             else :
                 msg = 'please check the username/password'

@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
+from django.contrib import auth
+
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password
 
@@ -17,7 +19,7 @@ def loginsignup(request):
         if user:
             if user.is_active:
                 auth.login(request,user)
-                return HttpResponseRedirect(reverse('home'))
+                return redirect('home')
             else:
                 msg = "Your account was inactive. please contact Project admin by contact us form on home page"
         else:

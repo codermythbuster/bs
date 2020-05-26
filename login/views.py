@@ -22,7 +22,8 @@ def loginsignup(request):
                 msg = "Your account was inactive. please contact Project admin by contact us form on home page"
         else:
             msg = " cant login given usename/password is invalid!!!! "
-    return render(request, 'huskdata/Log-in.html',context={'message':msg})
+            
+    return render(request,'loginsignup.html',{'message':msg})
 
 def register(request):
     if request.method=='POST':
